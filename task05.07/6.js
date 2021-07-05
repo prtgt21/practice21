@@ -1,9 +1,9 @@
-let str = ' а роза упала на лапу Азора';
+let str = 'а розаупала,на-лапу Азора';
 
 function PLDR(str) {
 let strrev;
-strrev = str.split('').reverse().join('').split(" ").join("").toLowerCase();
-if (str.split(" ").join("").toLowerCase() === strrev) {
+strrev = str.split('').reverse().join('').replace(/\s/g, '').replace(/[^a-zа-яё]/gi, '').toLowerCase();
+if (str.replace(/\s/g, '').toLowerCase().replace(/[^a-zа-яё]/gi, '') === strrev) {
   return(`Palindrom`)
 } else {
     return(`Not palindrom`)
